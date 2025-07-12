@@ -1,0 +1,173 @@
+.app-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.qr-scanner-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.qr-scanner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.qr-scanner-frame {
+  width: 280px;
+  height: 280px;
+  border: 3px solid #3b82f6;
+  border-radius: 20px;
+  background: transparent;
+  position: relative;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+}
+
+.qr-scanner-frame::before,
+.qr-scanner-frame::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #3b82f6;
+}
+
+.qr-scanner-frame::before {
+  top: -4px;
+  left: -4px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 20px;
+}
+
+.qr-scanner-frame::after {
+  bottom: -4px;
+  right: -4px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 20px;
+}
+
+.qr-code-canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Html5QrcodeScanner specific styles */
+#qr-reader {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#qr-reader > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#qr-reader__camera_selection {
+  margin-bottom: 10px;
+}
+
+#qr-reader__dashboard {
+  background: transparent !important;
+  border: none !important;
+}
+
+#qr-reader__dashboard_section {
+  background: transparent !important;
+  border: none !important;
+}
+
+#qr-reader__dashboard_section_swaplink {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+#qr-reader__scan_region {
+  background: transparent !important;
+  border: none !important;
+}
+
+#qr-reader__scan_region img {
+  border-radius: 8px !important;
+}
+
+/* Style the camera selection dropdown */
+#qr-reader__camera_selection select {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #000 !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Style the torch/flashlight button */
+#qr-reader__torch_button {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  margin: 5px !important;
+}
+
+#qr-reader__torch_button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Style the zoom slider */
+#qr-reader__zoom_slider {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  margin: 5px !important;
+}
+
+/* Hide file input section when not needed */
+#qr-reader__dashboard_section_fsr {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #qr-reader__dashboard {
+    padding: 10px !important;
+  }
+  
+  #qr-reader__scan_region {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+}
